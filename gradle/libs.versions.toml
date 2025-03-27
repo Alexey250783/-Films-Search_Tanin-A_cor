@@ -1,0 +1,71 @@
+[versions]
+agp = "8.5.0"
+kotlin = "1.9.0"
+coreKtx = "1.15.0"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+appcompat = "1.7.0"
+material = "1.12.0"
+activity = "1.10.1"
+constraintlayout = "2.2.1"
+constraintLayoutVersion = "2.0.4"
+materialVersion = "1.8.0-rc01"
+recyclerview = "1.4.0"
+cardview = "1.0.0"
+design = "28.0.0"
+viewpager2 = "1.1.0"
+supportFragment = "28.0.0"
+navigationFragment = "1.0.0"
+gridlayout = "1.1.0-beta01"
+viewbinding = "8.11.0-alpha02"
+fragment = "1.8.6"
+uiAndroidText = "0.1.0-dev08"
+recyclerviewV7 = "28.0.0"
+materialNavigation = "1.8.0-rc01"
+material3 = "1.0.0-alpha05"
+navigationFragmentKtx = "1.0.0"
+library = "8.9.0"
+workRuntime = "2.10.0"
+versionedparcelable = "1.2.1"
+uiGraphics = "1.8.0-rc01"
+recyclerviewSelection = "28.0.0"
+versionedparcelableVersion = "28.0.0"
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+constraint-layout = { group = "com.android.support.constraint", name = "constraint-layout", version.ref = "constraintLayoutVersion" }
+androidx-material = { group = "androidx.compose.material", name = "material", version.ref = "materialVersion" }
+androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
+androidx-cardview = { group = "androidx.cardview", name = "cardview", version.ref = "cardview" }
+design = { group = "com.android.support", name = "design", version.ref = "design" }
+androidx-viewpager2 = { group = "androidx.viewpager2", name = "viewpager2", version.ref = "viewpager2" }
+support-fragment = { group = "com.android.support", name = "support-fragment", version.ref = "supportFragment" }
+navigation-fragment = { group = "android.arch.navigation", name = "navigation-fragment", version.ref = "navigationFragment" }
+androidx-gridlayout = { group = "androidx.gridlayout", name = "gridlayout", version.ref = "gridlayout" }
+androidx-viewbinding = { group = "androidx.databinding", name = "viewbinding", version.ref = "viewbinding" }
+androidx-fragment = { group = "androidx.fragment", name = "fragment", version.ref = "fragment" }
+androidx-ui-android-text = { group = "androidx.ui", name = "ui-android-text", version.ref = "uiAndroidText" }
+recyclerview-v7 = { group = "com.android.support", name = "recyclerview-v7", version.ref = "recyclerviewV7" }
+androidx-material-navigation = { group = "androidx.compose.material", name = "material-navigation", version.ref = "materialNavigation" }
+androidx-material3 = { group = "androidx.xr.compose.material3", name = "material3", version.ref = "material3" }
+navigation-fragment-ktx = { group = "android.arch.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
+library = { group = "com.android.databinding", name = "library", version.ref = "library" }
+androidx-work-runtime = { group = "androidx.work", name = "work-runtime", version.ref = "workRuntime" }
+androidx-versionedparcelable = { group = "androidx.versionedparcelable", name = "versionedparcelable", version.ref = "versionedparcelable" }
+androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics", version.ref = "uiGraphics" }
+recyclerview-selection = { group = "com.android.support", name = "recyclerview-selection", version.ref = "recyclerviewSelection" }
+versionedparcelable = { group = "com.android.support", name = "versionedparcelable", version.ref = "versionedparcelableVersion" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+
+

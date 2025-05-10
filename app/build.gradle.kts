@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.example.filmssearch"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.filmssearch"
         minSdk = 29
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -63,6 +63,9 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.recyclerview.selection)
     implementation(libs.versionedparcelable)
+    implementation(libs.androidx.databinding.runtime)
+    implementation(libs.com.android.legacy.kapt.gradle.plugin)
+    implementation(libs.material.navigation)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

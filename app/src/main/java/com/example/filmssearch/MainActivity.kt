@@ -6,17 +6,20 @@ import android.os.Parcelable
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.amsdevelops.filmssearch.Film
 import com.example.filmssearch.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = ActivityMainBinding.inflate(layoutInflater)
-        enableEdgeToEdge()
+        //Инициализируем объект
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        //Передаем его в метод
         setContentView(binding.root)
 
         initNavigation()
-
         //Зупускаем фрагмент при старте
         supportFragmentManager
             .beginTransaction()
@@ -27,10 +30,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun launchDetailsFragment(film: Film) {
-        val binding = ActivityMainBinding.inflate(layoutInflater)
-        enableEdgeToEdge()
-        setContentView(binding.root)
-
         //Создаем "посылку"
         val bundle = Bundle()
         //Кладем наш фильм в "посылку"
@@ -49,51 +48,41 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initNavigation() {
-        val binding = ActivityMainBinding.inflate(layoutInflater)
-        enableEdgeToEdge()
-        setContentView(binding.root)
-
         binding.bottomNavigation.setOnNavigationItemSelectedListener {
-
             when (it.itemId) {
                 R.id.home -> {
                     val tag = "home"
                     val fragment = checkFragmentExistence(tag)
                     //В первом параметре, если фрагмент не найден и метод вернул null, то с помощью
                     //элвиса мы вызываем создание нвого фрагмента
-                    changeFragment(fragment ?: HomeFragment(), tag)
+                    changeFragment( fragment?: HomeFragment(), tag)
                     true
                 }
-
                 R.id.favorites -> {
                     val tag = "favorites"
                     val fragment = checkFragmentExistence(tag)
-                    changeFragment(fragment ?: FavoritesFragment(), tag)
+                    changeFragment( fragment?: FavoritesFragment(), tag)
                     true
                 }
-
                 R.id.watch_later -> {
                     val tag = "watch_later"
                     val fragment = checkFragmentExistence(tag)
-                    changeFragment(fragment ?: WatchLaterFragment(), tag)
+                    changeFragment( fragment?: WatchLaterFragment(), tag)
                     true
                 }
-
                 R.id.selections -> {
                     val tag = "selections"
                     val fragment = checkFragmentExistence(tag)
-                    changeFragment(fragment ?: SelectionsFragment(), tag)
+                    changeFragment( fragment?: SelectionsFragment(), tag)
                     true
                 }
-
                 else -> false
             }
         }
     }
 
     //Ищем фрагмент по тэгу, если он есть то возвращаем его, если нет - то null
-    private fun checkFragmentExistence(tag: String): Fragment? =
-        supportFragmentManager.findFragmentByTag(tag)
+    private fun checkFragmentExistence(tag: String): Fragment? = supportFragmentManager.findFragmentByTag(tag)
 
     private fun changeFragment(fragment: Fragment, tag: String) {
         supportFragmentManager
@@ -103,8 +92,3 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 }
-
-class Film {
-}
-
-

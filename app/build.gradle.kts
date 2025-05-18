@@ -35,6 +35,7 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        dataBinding = true
     }
 }
 
@@ -66,6 +67,15 @@ dependencies {
     implementation(libs.androidx.databinding.runtime)
     implementation(libs.com.android.legacy.kapt.gradle.plugin)
     implementation(libs.material.navigation)
+    implementation(libs.androidx.fragment.testing.manifest)
+    implementation(libs.glide)
+    implementation(libs.androidx.fragment.ktx)
+    implementation(libs.androidx.animation.graphics)
+    implementation(libs.design.bottomnavigation)
+    implementation(libs.androidx.animation.graphics.android)
+    implementation(libs.play.services.appsearch)
+    implementation(libs.androidx.pdf.viewer.fragment)
+    implementation(libs.databinding.library)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

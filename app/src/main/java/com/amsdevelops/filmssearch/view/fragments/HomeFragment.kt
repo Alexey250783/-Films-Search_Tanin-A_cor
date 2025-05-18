@@ -1,74 +1,39 @@
-package com.example.filmssearch
+package com.amsdevelops.filmssearch.view.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.SearchView
-import com.amsdevelops.filmssearch.FilmListRecyclerAdapter
-import com.example.filmssearch.databinding.FragmentHomeBinding
+import androidx.appcompat.widget.SearchView
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.amsdevelops.filmssearch.Film
-import com.example.filmssearch.R.drawable
+import com.amsdevelops.filmssearch.domain.Film
+import com.amsdevelops.filmssearch.utils.AnimationHelper
+import com.amsdevelops.filmssearch.view.MainActivity
+import com.amsdevelops.filmssearch.view.rv_adapters.FilmListRecyclerAdapter
+import com.amsdevelops.filmssearch.view.rv_adapters.TopSpacingItemDecoration
+import com.amsdevelops.filmssearch.viewmodel.HomeFragmentViewModel
+import com.example.filmssearch.databinding.FragmentHomeBinding
 import java.util.*
 
 class HomeFragment : Fragment() {
+    private val viewModel by lazy {
+        ViewModelProvider.NewInstanceFactory().create(HomeFragmentViewModel::class.java)
+    }
     private lateinit var filmsAdapter: FilmListRecyclerAdapter
     private lateinit var binding: FragmentHomeBinding
-    private val filmsDataBase = listOf(
-        Film(
-            "The Alice in Wonderland",
-            drawable.poster_11_alice,
-            "It tells the story of a girl named Alice, who falls through a rabbit hole into an imaginary world inhabited by strange anthropomorphic creatures.",
-            7.7f
-        ),
-        Film(
-            "The Heat",
-            drawable.poster_12_heat,
-            2.0f
-        ),
-        Film(
-            "The Marilyn Monroe",
-            drawable.poster_13_marilyn,
-            6.7f
-        ),
-        Film(
-            "Terminator",
-            drawable.poster_14_term,
-            8.7f
-        ),
-        Film(
-            "The Martian",
-            drawable.poster_15_martian,
-            9.7f
-        ),
-        Film(
-            "Bad Santa",
-            drawable.poster_16_bad,
-            8.6f
-        ),
-        Film(
-            "Avatar",
-            drawable.poster_17_avatar,
-            5.7f
-        ),
-        Film(
-            "Moana 2",
-            drawable.poster_18_moana,
-            4.7f
-        ),
-        Film(
-            "Oppenheimer",
-            drawable.poster_19_oppen,
-            8.0f
-        ),
-        Film(
-            "Mufasa -The Lion King",
-            drawable.poster_20_mufasa,
-            8.4f
-        )
-    )
+    private var filmsDataBase = listOf<Film>()
+        //Используем backing field
+        set(value) {
+            //Если придет такое же значение то мы выходим из метода
+            if (field == value) return
+            //Если прило другое значение, то кладем его в переменную
+            field = value
+            //Обновляем RV адаптер
+            filmsAdapter.addItems(field)
+        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -86,14 +51,21 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        AnimationHelper.performFragmentCircularRevealAnimation(binding.homeFragmentRoot, requireActivity(), 1)
+        AnimationHelper.performFragmentCircularRevealAnimation(
+            binding.homeFragmentRoot,
+            requireActivity(),
+            1
+        )
 
         initSearchView()
 
         //находим наш RV
         initRecyckler()
         //Кладем нашу БД в RV
-        filmsAdapter.addItems(filmsDataBase)
+        viewModel.filmsListLiveData.observe(viewLifecycleOwner, Observer<List<Film>> {
+            filmsDataBase = it
+        })
+
     }
 
     private fun initSearchView() {

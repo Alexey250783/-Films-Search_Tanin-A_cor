@@ -34,6 +34,15 @@ versionedparcelableVersion = "28.0.0"
 databindingRuntime = "8.9.1"
 comAndroidLegacyKaptGradlePlugin = "8.11.0-alpha04"
 materialNavigationVersion = "1.9.0-alpha02"
+fragmentTestingManifest = "1.8.6"
+glide = "5.0.0-rc01"
+fragmentKtx = "1.8.6"
+animationGraphics = "1.9.0-alpha02"
+designBottomnavigation = "28.0.0-alpha1"
+animationGraphicsAndroid = "1.9.0-alpha02"
+playServicesAppsearch = "16.0.1"
+pdfViewerFragment = "1.0.0-alpha09"
+libraryVersion = "8.11.0-alpha10"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -69,6 +78,15 @@ versionedparcelable = { group = "com.android.support", name = "versionedparcelab
 androidx-databinding-runtime = { group = "androidx.databinding", name = "databinding-runtime", version.ref = "databindingRuntime" }
 com-android-legacy-kapt-gradle-plugin = { group = "com.android.legacy-kapt", name = "com.android.legacy-kapt.gradle.plugin", version.ref = "comAndroidLegacyKaptGradlePlugin" }
 material-navigation = { group = "androidx.compose.material", name = "material-navigation", version.ref = "materialNavigationVersion" }
+androidx-fragment-testing-manifest = { group = "androidx.fragment", name = "fragment-testing-manifest", version.ref = "fragmentTestingManifest" }
+glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+androidx-fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragmentKtx" }
+androidx-animation-graphics = { group = "androidx.compose.animation", name = "animation-graphics", version.ref = "animationGraphics" }
+design-bottomnavigation = { group = "com.android.support", name = "design-bottomnavigation", version.ref = "designBottomnavigation" }
+androidx-animation-graphics-android = { group = "androidx.compose.animation", name = "animation-graphics-android", version.ref = "animationGraphicsAndroid" }
+play-services-appsearch = { group = "com.google.android.gms", name = "play-services-appsearch", version.ref = "playServicesAppsearch" }
+androidx-pdf-viewer-fragment = { group = "androidx.pdf", name = "pdf-viewer-fragment", version.ref = "pdfViewerFragment" }
+databinding-library = { group = "com.android.databinding", name = "library", version.ref = "libraryVersion" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

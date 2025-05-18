@@ -1,8 +1,10 @@
-package com.amsdevelops.filmssearch
+package com.amsdevelops.filmssearch.view.rv_viewholders
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+import com.amsdevelops.filmssearch.domain.Film
 import com.bumptech.glide.Glide
+
 
 //В конструктор класс передается layout, который мы создали(film_item.xml)
 class FilmViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -10,6 +12,7 @@ class FilmViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val title = itemView.title
     private val poster = itemView.poster
     private val description = itemView.description
+
     //Вот здесь мы находим в верстке наш прогресс бар для рейтинга
     private val ratingDonut = itemView.rating_donut
 

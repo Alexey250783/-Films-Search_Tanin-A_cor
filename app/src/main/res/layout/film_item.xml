@@ -23,7 +23,8 @@
         android:layout_height="match_parent"
         android:layout_margin="10dp"
         android:elevation="1dp"
-        app:cardCornerRadius="10dp">
+        app:cardCornerRadius="10dp"
+        tools:ignore="MissingClass">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/item_container"

@@ -3,8 +3,8 @@ package com.amsdevelops.filmssearch.data
 import com.amsdevelops.filmssearch.domain.Film
 import com.example.filmssearch.R
 
-class MainRepository {
-    val filmsDataBase = listOf(
+class MainRepository(
+    val filmsDataBase: List<Film> = listOf(
         Film(
             title = "The Alice in Wonderland",
             poster = R.drawable.poster_11_alice,
@@ -65,4 +65,5 @@ class MainRepository {
             "Orphaned Mufasa meets a royal heir named Taka.",
             8.4f
         )
-}
+    )
+)

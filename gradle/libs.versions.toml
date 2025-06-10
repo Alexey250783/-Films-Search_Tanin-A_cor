@@ -1,5 +1,5 @@
 [versions]
-agp = "8.10.0"
+agp = "8.10.1"
 kotlin = "1.9.0"
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -43,6 +43,11 @@ animationGraphicsAndroid = "1.9.0-alpha02"
 playServicesAppsearch = "16.0.1"
 pdfViewerFragment = "1.0.0-alpha09"
 libraryVersion = "8.11.0-alpha10"
+designWidget = "28.0.0-alpha1"
+widgets = "0.0.1"
+designFloatingactionbutton = "28.0.0-alpha1"
+fragmentVersion = "1.8.8"
+gson = "2.13.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -87,6 +92,11 @@ androidx-animation-graphics-android = { group = "androidx.compose.animation", na
 play-services-appsearch = { group = "com.google.android.gms", name = "play-services-appsearch", version.ref = "playServicesAppsearch" }
 androidx-pdf-viewer-fragment = { group = "androidx.pdf", name = "pdf-viewer-fragment", version.ref = "pdfViewerFragment" }
 databinding-library = { group = "com.android.databinding", name = "library", version.ref = "libraryVersion" }
+design-widget = { group = "com.android.support", name = "design-widget", version.ref = "designWidget" }
+widgets = { group = "com.google.assistant.appactions", name = "widgets", version.ref = "widgets" }
+design-floatingactionbutton = { group = "com.android.support", name = "design-floatingactionbutton", version.ref = "designFloatingactionbutton" }
+fragment = { group = "androidx.fragment", name = "fragment", version.ref = "fragmentVersion" }
+gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.example.filmssearch"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.filmssearch"
-        minSdk = 29
-        targetSdk = 35
+        minSdk = 31
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
@@ -76,6 +76,11 @@ dependencies {
     implementation(libs.play.services.appsearch)
     implementation(libs.androidx.pdf.viewer.fragment)
     implementation(libs.databinding.library)
+    implementation(libs.design.widget)
+    implementation(libs.widgets)
+    implementation(libs.design.floatingactionbutton)
+    implementation(libs.fragment)
+    implementation(libs.gson)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

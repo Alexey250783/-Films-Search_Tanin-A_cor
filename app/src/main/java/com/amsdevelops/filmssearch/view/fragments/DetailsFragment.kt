@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.amsdevelops.filmssearch.view.fragments
 
 import android.app.Fragment

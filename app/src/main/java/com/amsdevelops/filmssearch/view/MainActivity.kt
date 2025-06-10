@@ -1,7 +1,7 @@
 package com.amsdevelops.filmssearch.view
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import android.support.v7.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.amsdevelops.filmssearch.view.fragments.DetailsFragment
 import com.amsdevelops.filmssearch.view.fragments.FavoritesFragment

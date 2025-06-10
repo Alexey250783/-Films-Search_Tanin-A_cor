@@ -5,7 +5,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.amsdevelops.filmssearch.domain.Film
 import com.bumptech.glide.Glide
 
-
 //В конструктор класс передается layout, который мы создали(film_item.xml)
 class FilmViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     //Привязываем view из layout к переменным

@@ -15,6 +15,7 @@ tools:context="com.amsdevelops.filmssearch.view.fragments.FavoritesFragment">
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:listitem="@layout/film_item"
-    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+    tools:ignore="MissingClass" />
 
 </FrameLayout>

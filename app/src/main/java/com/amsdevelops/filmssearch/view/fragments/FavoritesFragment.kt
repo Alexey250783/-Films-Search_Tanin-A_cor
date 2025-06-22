@@ -1,15 +1,18 @@
-package com.example.filmssearch
+package com.amsdevelops.filmssearch.view.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.amsdevelops.filmssearch.Film
-import com.amsdevelops.filmssearch.FilmListRecyclerAdapter
+import com.amsdevelops.filmssearch.view.rv_adapters.FilmListRecyclerAdapter
+import com.amsdevelops.filmssearch.view.rv_adapters.TopSpacingItemDecoration
+import com.amsdevelops.filmssearch.domain.Film
+import com.amsdevelops.filmssearch.utils.AnimationHelper
+import com.amsdevelops.filmssearch.view.MainActivity
 import com.example.filmssearch.databinding.FragmentFavoritesBinding
-
 
 class FavoritesFragment : Fragment() {
     private lateinit var filmsAdapter: FilmListRecyclerAdapter
@@ -17,9 +20,8 @@ class FavoritesFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentFavoritesBinding.inflate(inflater, container, false)
-        // Inflate the layout for this fragment
         return binding.root
     }
 
@@ -31,7 +33,7 @@ class FavoritesFragment : Fragment() {
         AnimationHelper.performFragmentCircularRevealAnimation(binding.favoritesFragmentRoot, requireActivity(),2)
 
         binding.favoritesRecycler.apply {
-            filmsAdapter = FilmListRecyclerAdapter(object : FilmListRecyclerAdapter.OnItemClickListener{
+            filmsAdapter = FilmListRecyclerAdapter(object : FilmListRecyclerAdapter.OnItemClickListener {
                 override fun click(film: Film) {
                     (requireActivity() as MainActivity).launchDetailsFragment(film)
                 }

@@ -1,11 +1,13 @@
-package com.example.filmssearch
+package com.amsdevelops.filmssearch.view.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import com.amsdevelops.filmssearch.utils.AnimationHelper
 import com.example.filmssearch.databinding.FragmentWatchLaterBinding
+
 
 class WatchLaterFragment : Fragment() {
     private lateinit var binding: FragmentWatchLaterBinding
@@ -20,6 +22,10 @@ class WatchLaterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        AnimationHelper.performFragmentCircularRevealAnimation(binding.watchLaterFragmentRoot, requireActivity(), 3)
+        AnimationHelper.performFragmentCircularRevealAnimation(
+            binding.watchLaterFragmentRoot,
+            requireActivity(),
+            3
+        )
     }
 }

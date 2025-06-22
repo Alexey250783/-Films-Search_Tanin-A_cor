@@ -1,9 +1,12 @@
-package com.amsdevelops.filmssearch
+package com.amsdevelops.filmssearch.view.rv_adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.amsdevelops.filmssearch.view.rv_viewholders.FilmViewHolder
+import com.amsdevelops.filmssearch.domain.Film
 import com.example.filmssearch.R
+
 
 //в параметр передаем слушатель, чтобы мы потом могли обрабатывать нажатия из класса активити
 class FilmListRecyclerAdapter(private val clickListener: OnItemClickListener) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -37,7 +40,7 @@ class FilmListRecyclerAdapter(private val clickListener: OnItemClickListener) : 
     }
 
     //Метод для добавления объектов в наш список
-    fun addItems(list: List<com.amsdevelops.filmssearch.Film>) {
+    fun addItems(list: List<Film>) {
         //Сначала очишаем(если не реализовать DiffUtils)
         items.clear()
         //Добавляем

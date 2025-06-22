@@ -1,9 +1,8 @@
-package com.amsdevelops.filmssearch
+package com.amsdevelops.filmssearch.domain
 
 import android.annotation.SuppressLint
 import android.os.Parcel
 import android.os.Parcelable
-
 
 @SuppressLint("ParcelCreator")
 @Parcelize
@@ -13,4 +12,18 @@ data class Film(
     val description: String,
     var rating: Float = 0f,
     var isInFavorites: Boolean = false
-) : Parcelable
+) : Parcelable {
+
+    override fun describeContents(): Int {
+        return 0
+    }
+
+    override fun writeToParcel(dest: Parcel, flags: Int) {
+        TODO("Not yet implemented")
+    }
+}
+
+annotation class Parcelize
+
+
+

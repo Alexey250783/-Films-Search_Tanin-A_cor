@@ -1,12 +1,15 @@
-package com.example.filmssearch
+@file:Suppress("DEPRECATION")
 
+package com.amsdevelops.filmssearch.view.fragments
+
+import android.app.Fragment
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.content.Intent
-import com.amsdevelops.filmssearch.Film
+import com.amsdevelops.filmssearch.domain.Film
+import com.example.filmssearch.R
 import com.example.filmssearch.databinding.FragmentDetailsBinding
 
 class DetailsFragment : Fragment() {

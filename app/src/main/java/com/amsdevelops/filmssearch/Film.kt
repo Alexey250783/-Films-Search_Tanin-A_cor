@@ -1,16 +1,15 @@
 package com.amsdevelops.filmssearch
 
-import android.annotation.SuppressLint
-import android.os.Parcel
 import android.os.Parcelable
 
-
-@SuppressLint("ParcelCreator")
 @Parcelize
-data class Film(
+abstract class Film(
     val title: String,
     val poster: Int,
     val description: String,
     var rating: Float = 0f,
     var isInFavorites: Boolean = false
 ) : Parcelable
+
+annotation class Parcelize
+

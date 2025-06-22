@@ -2,6 +2,7 @@ package com.amsdevelops.filmssearch
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
 //В конструктор класс передается layout, который мы создали(film_item.xml)
 class FilmViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
